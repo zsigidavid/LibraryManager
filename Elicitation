@@ -1,1 +1,9 @@
-
+User Story	                                                                                                                                                          (Story Point)          MoSCoW Kategória
+Felhasználóként szeretnék regisztrálni a webshopba, hogy el tudjam menteni a kedvenc könyveimet és a vásárlási előzményeimet.	                                             3                   Should have
+Felhasználóként szeretnék könyveket keresni cím, szerző és ISBN szám alapján, hogy könnyen megtaláljam, amit keresek.	                                                     5                   Must have
+Felhasználóként szeretném látni a könyv részletes adatait (borítókép, fülszöveg, értékelések), mielőtt a kosárba teszem.	                                                 2                   Must have
+Felhasználóként szeretnék könyveket a kosaramba tenni, és onnan szükség esetén kivenni, hogy rugalmasan tudjak vásárolni.	                                                 4                   Must have
+Felhasználóként szeretnék különböző fizetési módok (bankkártya, utánvét, PayPal) közül választani, hogy a nekem legmegfelelőbb módon fizethessek.	                         8                   Should have
+Felhasználóként szeretnék több szállítási módot (házhozszállítás, csomagpont) közül választani, hogy a nekem legkényelmesebb módon kapjam meg a rendelésem.	               6                   Could have
+Felhasználóként szeretném nyomon követni a rendelésemet, hogy tudjam, mikor érkezik meg.	                                                                                 4                   Could have
+Felhasználóként szeretnék hírlevelet kapni az újdonságokról és akciókról, hogy ne maradjak le semmiről.	                                                                   2                   Won't have
