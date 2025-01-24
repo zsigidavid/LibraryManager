@@ -2,85 +2,104 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>library-manager</artifactId>
+    <artifactId>LibraryManager</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Library Manager</name>
-    <description>A simple library management system.</description>
+    <name>LibraryManager</name>
+    <description>Library Management System</description>
 
     <properties>
+        <!-- Specify the Java version to use for the project -->
         <java.version>17</java.version>
+        <!-- Define Spring Boot version to ensure all Spring dependencies are consistent -->
+        <spring-boot.version>3.0.0</spring-boot.version>
     </properties>
 
     <dependencies>
-        <!-- Spring Boot Starter Web -->
+        <!-- Spring Boot Starter Web for REST API and web features -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.7.7</version> <!-- Megfelelő verzió -->
+            <version>${spring-boot.version}</version>
         </dependency>
 
-        <!-- Spring Boot Starter Data JPA -->
+        <!-- Spring Boot Starter Data JPA for database integration -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>2.7.7</version> <!-- Megfelelő verzió -->
+            <version>${spring-boot.version}</version>
         </dependency>
 
-        <!-- H2 Database (runtime scope) -->
+        <!-- Jakarta Persistence API -->
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version> <!-- Latest version of Jakarta Persistence -->
+        </dependency>
+
+        <!-- H2 Database for an in-memory database during testing -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>2.1.214</version> <!-- Megfelelő verzió -->
+            <version>2.1.214</version>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Spring Boot Starter Test -->
+        <!-- Spring Boot Starter Test for unit and integration tests -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.7.7</version> <!-- Megfelelő verzió -->
+            <version>${spring-boot.version}</version>
             <scope>test</scope>
         </dependency>
 
-        <!-- Mockito for mocking dependencies -->
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>4.8.1</version> <!-- Legújabb verzió -->
-            <scope>test</scope>
-        </dependency>
-
-        <!-- JUnit 5 for testing -->
+        <!-- JUnit Jupiter for JUnit 5 tests -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.8.2</version> <!-- Legújabb verzió -->
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Mockito for mocking objects in tests -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>4.0.0</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.2</version> <!-- Legújabb verzió -->
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>4.0.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Spring Boot Maven Plugin -->
+            <!-- Maven Compiler Plugin to specify Java version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Spring Boot Maven Plugin for building and running the application -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.7.7</version> <!-- Megfelelő verzió -->
+                <version>${spring-boot.version}</version>
             </plugin>
         </plugins>
     </build>
-
 </project>

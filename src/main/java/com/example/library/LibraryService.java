@@ -10,21 +10,25 @@ import java.util.Optional;
 public class LibraryService {
 
     @Autowired
-    private LibraryRepository libraryRepository; // Ellenőrizd, hogy ez az importálás megtörtént
+    private LibraryRepository libraryRepository;
 
+    // Minden könyv lekérése az adatbázisból
+    public List<Book> getAllBooks() {
+        return libraryRepository.findAll();
+    }
+
+    // Könyv hozzáadása az adatbázishoz
     public void addBook(Book book) {
         libraryRepository.save(book);
     }
 
+    // Könyv lekérése az ID alapján
     public Optional<Book> getBookById(String id) {
         return libraryRepository.findById(id);
     }
 
-    public void removeBook(String id) {
+    // Könyv törlése az ID alapján
+    public void deleteBookById(String id) {
         libraryRepository.deleteById(id);
-    }
-
-    public List<Book> getAllBooks() {
-        return libraryRepository.findAll();
     }
 }
